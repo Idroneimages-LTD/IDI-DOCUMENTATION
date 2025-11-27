@@ -3,7 +3,7 @@ description: Hybrid API for Mission Telemetry
 
 remote_theme: just-the-docs/just-the-docs@v0.8.2
 
-color_scheme: dark
+color_scheme: light
 
 mermaid:
   version: "10.6.0"

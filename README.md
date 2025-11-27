@@ -4,7 +4,7 @@ Official documentation for the IDI-FLY-V3 Hybrid API for Mission Telemetry.
 
 ## View Documentation
 
-Visit the live documentation site: **[https://YOUR_USERNAME.github.io/IDI-DOCUMENTATION](https://YOUR_USERNAME.github.io/IDI-DOCUMENTATION)**
+Visit the live documentation site: **[https://idroneimages-LTD.github.io/IDI-DOCUMENTATION](https://idroneimages-LTD.github.io/IDI-DOCUMENTATION)**
 
 ## Local Development
 
