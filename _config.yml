@@ -1,6 +1,0 @@
-# Site settings
-title: IDI-FLY-V3 API Documentation
-description: Hybrid API for Mission Telemetry - REST, MQTTS, and WebSocket integration
-
-# Build settings
-markdown: kramdown
