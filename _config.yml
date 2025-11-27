@@ -1,0 +1,17 @@
+# Site settings
+title: IDI-FLY-V3 API Documentation
+description: Hybrid API for Mission Telemetry - REST, MQTTS, and WebSocket integration
+
+# Theme
+remote_theme: just-the-docs/just-the-docs
+
+# Mermaid support
+mermaid:
+  version: "10.6.0"
+
+# Build settings
+markdown: kramdown
+
+# Plugins
+plugins:
+  - jekyll-remote-theme

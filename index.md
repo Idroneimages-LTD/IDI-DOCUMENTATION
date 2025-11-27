@@ -1,3 +1,9 @@
+---
+layout: default
+title: IDI-FLY-V3 API Documentation
+mermaid: true
+---
+
 # IDI-FLY-V3 Hybrid API for Mission Telemetry
 
 **API Version:** v3
