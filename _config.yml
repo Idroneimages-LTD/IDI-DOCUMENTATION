@@ -1,0 +1,90 @@
+# Site settings
+title: IDI-FLY-V3 API Documentation
+description: Hybrid API for Mission Telemetry - REST, MQTTS, and WebSocket integration
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Theme - "just-the-docs" is excellent for API documentation
+remote_theme: just-the-docs/just-the-docs
+
+# Color scheme (light, dark, or custom)
+color_scheme: light
+
+# Logo (optional - add logo.png to assets/images/)
+# logo: "/assets/images/logo.png"
+
+# Aux links (top right of page)
+aux_links:
+  "View on GitHub":
+    - "https://github.com/YOUR_USERNAME/IDI-DOCUMENTATION"
+
+aux_links_new_tab: true
+
+# Footer content
+footer_content: "IDI-FLY-V3 API Documentation. Copyright &copy; 2025."
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Search settings
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Mermaid diagrams support
+mermaid:
+  version: "10.6.0"
+
+# Enable copy code button
+enable_copy_code_button: true
+
+# Heading anchor links
+heading_anchors: true
+
+# External navigation links (optional)
+nav_external_links:
+  - title: API Status
+    url: https://status.idi-fly.com
+    hide_icon: false
+
+# Callouts (for notes, warnings, etc.)
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: blue
+  tip:
+    title: Tip
+    color: green
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .gitignore
