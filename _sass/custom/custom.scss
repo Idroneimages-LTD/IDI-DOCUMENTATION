@@ -1,0 +1,25 @@
+// Full width layout
+.main-content-wrap {
+  max-width: none !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.main-content {
+  max-width: none !important;
+}
+
+// Wider side navigation
+.side-bar {
+  width: 264px;
+}
+
+@media (min-width: 66.5rem) {
+  .side-bar {
+    width: 264px;
+  }
+
+  .main {
+    margin-left: 264px;
+  }
+}
