@@ -3,7 +3,7 @@ description: IDI-FLY-V3 Integration API Documentation
 
 remote_theme: just-the-docs/just-the-docs@v0.8.2
 
-color_scheme: light
+color_scheme: idi
 
 logo: "/assets/images/logo.svg"
 

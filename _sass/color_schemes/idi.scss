@@ -1,0 +1,50 @@
+// IDI Brand Color Scheme
+
+// Primary brand color - Teal
+$idi-teal: #1B92A6;
+$idi-teal-light: #2bb3c9;
+$idi-teal-dark: #147080;
+
+// Secondary - Grey
+$idi-grey: #95989C;
+$idi-grey-light: #b8bbbe;
+$idi-grey-dark: #6d7073;
+
+// Background colors
+$body-background-color: #ffffff;
+$sidebar-color: #f8f9fa;
+$code-background-color: #f5f7f9;
+
+// Link colors
+$link-color: $idi-teal;
+$link-hover-color: $idi-teal-dark;
+
+// Button colors
+$btn-primary-color: $idi-teal;
+
+// Border colors
+$border-color: #e9ecef;
+
+// Text colors
+$body-text-color: #2d3339;
+$body-heading-color: #1a1d21;
+$nav-child-link-color: $idi-grey-dark;
+
+// Sidebar
+$sidebar-background-color: #f8f9fa;
+
+// Search
+$search-background-color: #ffffff;
+$search-result-preview-color: $idi-grey;
+
+// Navigation
+$nav-link-color: $body-text-color;
+$nav-link-active-color: $idi-teal;
+$nav-link-hover-color: $idi-teal;
+
+// Code
+$code-font-size: 0.875rem;
+
+// Tables
+$table-background-color: #ffffff;
+$table-header-background-color: #f5f7f9;
