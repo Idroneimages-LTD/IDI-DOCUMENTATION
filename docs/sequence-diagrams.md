@@ -7,7 +7,7 @@ mermaid: true
 
 # Sequence Diagrams
 
-Visual representations of the API interaction flows.
+Visual representations of the IDI Integration API interaction flows.
 
 ## Mission Flow
 

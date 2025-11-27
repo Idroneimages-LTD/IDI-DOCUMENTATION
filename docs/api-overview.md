@@ -6,7 +6,7 @@ nav_order: 3
 
 # API Overview and Integration Standards
 
-The IDI-FLY-V3 API implements a hybrid approach common in B2B SaaS integrations, distinguishing between asynchronous real-time event distribution and synchronous management commands.
+The IDI Integration API implements a hybrid approach common in B2B SaaS integrations, distinguishing between asynchronous real-time event distribution and synchronous management commands.
 
 | API Function | Protocol | Standard Model | Rationale |
 |:-------------|:---------|:---------------|:----------|

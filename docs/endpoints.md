@@ -7,7 +7,7 @@ has_children: true
 
 # Endpoint Specification
 
-The IDI-FLY-V3 API provides nine endpoints for mission control and telemetry.
+The IDI Integration API provides nine endpoints for mission control and telemetry.
 
 | # | Name | Method | Path/Topic | Protocol |
 |:--|:-----|:-------|:-----------|:---------|

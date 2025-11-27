@@ -1,5 +1,5 @@
-title: IDI-FLY-V3 API
-description: Hybrid API for Mission Telemetry
+title: IDI Integration API
+description: IDI-FLY-V3 Integration API Documentation
 
 remote_theme: just-the-docs/just-the-docs@v0.8.2
 
@@ -16,7 +16,7 @@ aux_links:
   GitHub: https://github.com/Idroneimages-LTD/IDI-FLY-DASHBOARD-V3
 aux_links_new_tab: true
 
-footer_content: "IDI-FLY-V3 API Documentation &copy; 2025"
+footer_content: "IDI Integration API Documentation &copy; 2025"
 
 nav_enabled: true
 

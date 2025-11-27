@@ -4,11 +4,11 @@ title: Home
 nav_order: 1
 ---
 
-# IDI-FLY-V3 API Documentation
+# IDI Integration API Documentation
 
 **Version:** v3 | **Updated:** 2025-11-27 | **Status:** Production
 
-Hybrid API for mission control, resource management, and real-time telemetry using HTTPS, MQTTS, and WSS.
+IDI-FLY-V3 Integration API for mission control, resource management, and real-time telemetry using HTTPS, MQTTS, and WSS.
 
 ## Quick Start
 
