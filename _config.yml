@@ -5,6 +5,8 @@ remote_theme: just-the-docs/just-the-docs@v0.8.2
 
 color_scheme: light
 
+logo: "/assets/images/logo.png"
+
 mermaid:
   version: "10.6.0"
 
