@@ -1,8 +1,8 @@
 # Site settings
 title: IDI-FLY-V3 API Documentation
 description: Hybrid API for Mission Telemetry - REST, MQTTS, and WebSocket integration
-baseurl: "/IDI-FLY-DASHBOARD-V3" # the subpath of your site, e.g. /blog
-url: "https://idroneimages-ltd.github.io" # the base hostname & protocol for your site
+baseurl: "" # empty for custom domain
+url: "https://doc.idi-fly.com" # your custom domain
 
 # Theme - "just-the-docs" is excellent for API documentation
 remote_theme: just-the-docs/just-the-docs
