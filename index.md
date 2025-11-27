@@ -1,43 +1,19 @@
 ---
 layout: default
-title: IDI-FLY-V3 API Documentation
+title: Home
+nav_order: 1
 mermaid: true
 ---
 
 # IDI-FLY-V3 Hybrid API for Mission Telemetry
 
-**API Version:** v3
-**Last Updated:** 2025-11-27
-**Status:** Production
+**API Version:** v3 | **Last Updated:** 2025-11-27 | **Status:** Production
 
-This document details the IDI-FLY-V3 Integration API (v3), specifying the nine endpoints for mission control, resource management, and real-time telemetry, utilizing a hybrid architecture secured by HTTPS, MQTTS, and WSS.
+Hybrid API for mission control, resource management, and real-time telemetry using HTTPS, MQTTS, and WSS.
 
 ---
 
-## Table of Contents
-
-1. [Sequence Diagrams](#i-sequence-diagrams)
-2. [API Overview and Integration Standards](#ii-api-overview-and-integration-standards)
-3. [Security and Access Control](#iii-security-and-access-control)
-4. [Versioning and Deprecation Policy](#iv-versioning-and-deprecation-policy)
-5. [Endpoint Specification](#v-endpoint-specification)
-   - [1. Mission Request (CreateJob)](#1-mission-request-endpoint-createjob)
-   - [2. Track Job Status (MQTTS)](#2-track-job-status-mqtts)
-   - [3. Track Job Status (WSS)](#3-track-job-status-wss)
-   - [4. Track Resource Status (MQTTS)](#4-track-resource-status-mqtts)
-   - [5. Track Resource Status (WSS)](#5-track-resource-status-wss)
-   - [6. STREAM_SHARE (REST)](#6-stream_share-rest)
-   - [7. Track Share Status (MQTTS)](#7-track-share-status-mqtts)
-   - [8. Track Share Status (WSS)](#8-track-share-status-wss)
-   - [9. GET RESOURCES](#9-get-resources)
-6. [Data Models](#vi-data-models)
-7. [Error Handling](#vii-error-handling)
-8. [Rate Limiting](#viii-rate-limiting)
-9. [Changelog](#ix-changelog)
-
----
-
-## I. Sequence Diagrams
+## Sequence Diagrams
 
 Visual representations of the API interaction flows.
 
@@ -359,7 +335,7 @@ flowchart TB
 
 ---
 
-## II. API Overview and Integration Standards
+## API Overview
 
 The IDI-FLY-V3 API implements a hybrid approach common in B2B SaaS integrations, distinguishing between asynchronous real-time event distribution and synchronous management commands.
 
@@ -378,7 +354,7 @@ The IDI-FLY-V3 API implements a hybrid approach common in B2B SaaS integrations,
 
 ---
 
-## III. Security and Access Control
+## Security
 
 All API interactions must adhere to stringent security protocols, aligned with modern API best practices.
 
@@ -441,7 +417,7 @@ Content-Type: application/json
 
 ---
 
-## IV. Versioning and Deprecation Policy
+## Versioning
 
 The API follows robust versioning practices to maintain stable and clean integrations.
 
@@ -487,7 +463,7 @@ When an unsupported version is requested, the API returns:
 
 ---
 
-## V. Endpoint Specification
+## Endpoints
 
 ### 1. Mission Request Endpoint (CreateJob)
 
@@ -809,7 +785,7 @@ Retrieves the collection of Device Group IDs accessible via a share code.
 
 ---
 
-## VI. Data Models
+## Data Models
 
 ### 6.1. Job States
 
@@ -901,7 +877,7 @@ Retrieves the collection of Device Group IDs accessible via a share code.
 
 ---
 
-## VII. Error Handling
+## Error Handling
 
 ### 7.1. Standard Error Response Format
 
@@ -948,7 +924,7 @@ Retrieves the collection of Device Group IDs accessible via a share code.
 
 ---
 
-## VIII. Rate Limiting
+## Rate Limiting
 
 ### 8.1. REST Endpoints
 
@@ -975,7 +951,7 @@ X-RateLimit-Reset: 1732700400
 
 ---
 
-## IX. Changelog
+## Changelog
 
 ### v3.0.0 (2025-11-27)
 
