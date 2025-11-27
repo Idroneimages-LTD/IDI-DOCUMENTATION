@@ -17,6 +17,7 @@ sequenceDiagram
     participant Client
     participant REST API
     participant MQTT Broker
+    participant WSS Server
     participant Drone System
     participant Dock
 
@@ -29,26 +30,46 @@ sequenceDiagram
     end
 
     rect rgb(255, 248, 240)
-        Note over Client,MQTT Broker: Phase 2: Subscribe to Updates
-        Client->>MQTT Broker: CONNECT [JWT as password]
-        MQTT Broker-->>Client: CONNACK
-        Client->>MQTT Broker: SUBSCRIBE {jobID}/JOB/STATUS
-        MQTT Broker-->>Client: SUBACK
+        Note over Client,WSS Server: Phase 2: Subscribe to Updates (MQTTS or WSS)
+        alt MQTTS Connection
+            Client->>MQTT Broker: CONNECT [JWT as password]
+            MQTT Broker-->>Client: CONNACK
+            Client->>MQTT Broker: SUBSCRIBE {jobID}/JOB/STATUS
+            MQTT Broker-->>Client: SUBACK
+        else WSS Connection
+            Client->>WSS Server: WSS /v3/jobs/{jobID}/status/ws<br/>[JWT token]
+            WSS Server-->>Client: 101 Switching Protocols
+        end
     end
 
     rect rgb(240, 255, 240)
         Note over Drone System,Client: Phase 3: Mission Execution
         Dock->>Dock: Open hatch
         Drone System->>MQTT Broker: Publish: PENDING → INPROGRESS
-        MQTT Broker-->>Client: Job Status Update
+        MQTT Broker->>WSS Server: Forward status
+        par Notify via MQTTS
+            MQTT Broker-->>Client: Job Status Update
+        and Notify via WSS
+            WSS Server-->>Client: Job Status Update
+        end
 
         loop Every 1 second (1 Hz)
             Drone System->>MQTT Broker: Publish telemetry<br/>{navigation, droneState}
-            MQTT Broker-->>Client: Status Update
+            MQTT Broker->>WSS Server: Forward telemetry
+            par MQTTS Stream
+                MQTT Broker-->>Client: Status Update
+            and WSS Stream
+                WSS Server-->>Client: Status Update
+            end
         end
 
         Drone System->>MQTT Broker: Publish: INPROGRESS → COMPLETED
-        MQTT Broker-->>Client: Job Completed
+        MQTT Broker->>WSS Server: Forward completion
+        par MQTTS Notification
+            MQTT Broker-->>Client: Job Completed
+        and WSS Notification
+            WSS Server-->>Client: Job Completed
+        end
     end
 ```
 
