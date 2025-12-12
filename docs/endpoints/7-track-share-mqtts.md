@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 7. Track Share (MQTTS)
+title: Track Share (MQTTS)
 parent: Endpoints
-nav_order: 7
+nav_order: 11
 ---
 
 # Track Share Status (MQTTS)

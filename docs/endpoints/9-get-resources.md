@@ -1,45 +1,64 @@
 ---
 layout: default
-title: 9. GET RESOURCES
+title: Resources - Get Device Groups
 parent: Endpoints
-nav_order: 9
+nav_order: 17
 ---
 
-# GET RESOURCES
+# Get Resources (Device Groups)
 
-Retrieves the collection of Device Group IDs accessible via a share code.
+Retrieve all device groups available to your organisation.
 
 | Detail | Specification |
 |:-------|:--------------|
 | **Method** | `GET` |
-| **URI** | `/v3/shares/{sharecode}/resources` |
-| **Security** | JWT Auth (mandatory) |
+| **URI** | `/v3/resources` |
+| **Security** | JWT Bearer Token |
 | **Success Response** | `200 OK` |
 
-## Path Parameters
+## Example Request
 
-| Parameter | Type | Description |
-|:----------|:-----|:------------|
-| `sharecode` | String | The unique ID obtained from STREAM_SHARE |
+```bash
+curl -X GET {{baseUrl}}/v3/resources \
+  -H "Authorization: Bearer {{accessToken}}"
+```
 
 ## Success Response (200)
 
 ```json
 {
+  "success": true,
   "resources": [
-    "drone-system-b775cc6e",
-    "dock-platform-d99f01a3"
-  ],
-  "page": {
-    "size": 10,
-    "totalElements": 2,
-    "totalPages": 1,
-    "number": 0
-  },
-  "_links": {
-    "self": {
-      "href": "/v3/shares/{sharecode}/resources"
+    {
+      "deviceGroupId": "group-uuid-123",
+      "name": "Fleet Alpha",
+      "description": "Primary inspection fleet",
+      "deviceCount": 5,
+      "devices": [
+        {
+          "deviceId": "drone-001",
+          "name": "Mavic 3 Enterprise",
+          "status": "online"
+        }
+      ]
     }
-  }
+  ],
+  "count": 1
 }
 ```
+
+| Field | Type | Description |
+|:------|:-----|:------------|
+| `success` | Boolean | Request success status |
+| `resources` | Array | List of device group objects |
+| `count` | Integer | Total number of device groups |
+
+## Device Group Object
+
+| Field | Type | Description |
+|:------|:-----|:------------|
+| `deviceGroupId` | String | Unique identifier for the device group |
+| `name` | String | Display name |
+| `description` | String | Description of the group |
+| `deviceCount` | Integer | Number of devices in the group |
+| `devices` | Array | List of devices in the group |

@@ -48,3 +48,23 @@ nav_order: 8
 | `IDEMPOTENCY_CONFLICT` | 409 | Same key used with different payload |
 | `VALIDATION_ERROR` | 422 | Request validation failed |
 | `DEVICE_OFFLINE` | 503 | Device is not currently online |
+
+## OAuth Error Codes
+
+The `/v3/auth/token` endpoint uses OAuth 2.0 standard error codes:
+
+| Error Code | HTTP Status | Description |
+|:-----------|:------------|:------------|
+| `invalid_request` | 400 | Missing or invalid parameters |
+| `unsupported_grant_type` | 400 | Only `client_credentials` is supported |
+| `invalid_client` | 401 | Invalid client credentials |
+| `access_denied` | 403 | Missing or invalid API key |
+
+**OAuth Error Response Format:**
+
+```json
+{
+  "error": "invalid_client",
+  "error_description": "Invalid client credentials"
+}
+```

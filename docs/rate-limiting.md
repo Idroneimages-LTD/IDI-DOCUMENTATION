@@ -8,11 +8,13 @@ nav_order: 9
 
 ## REST Endpoints
 
-| Endpoint | Rate Limit | Window |
-|:---------|:-----------|:-------|
-| `POST /v3/jobs/create` | 60 requests | per minute |
-| `POST /v3/streams/share` | 30 requests | per minute |
-| `GET /v3/shares/{sharecode}/resources` | 120 requests | per minute |
+| Endpoint | Rate Limit | Burst |
+|:---------|:-----------|:------|
+| `POST /v3/auth/token` | 50/sec | 100 |
+| `POST /v3/jobs/create` | 60/min | - |
+| `POST /v3/streams/share` | 30/min | - |
+| `GET /v3/shares/{sharecode}/resources` | 120/min | - |
+| All other endpoints | No limit | - |
 
 ## Rate Limit Headers
 

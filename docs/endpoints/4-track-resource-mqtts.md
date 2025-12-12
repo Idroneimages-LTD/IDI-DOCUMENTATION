@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 4. Track Resource (MQTTS)
+title: Track Resource (MQTTS)
 parent: Endpoints
-nav_order: 4
+nav_order: 9
 ---
 
 # Track Resource Status (MQTTS)

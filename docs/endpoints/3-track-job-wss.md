@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 3. Track Job (WSS)
+title: Track Job (WSS)
 parent: Endpoints
-nav_order: 3
+nav_order: 8
 ---
 
 # Track Job Status (WSS)
@@ -20,9 +20,7 @@ Real-time job status updates via WebSocket Secure.
 
 ```javascript
 const ws = new WebSocket(
-  'wss://ws.idi-fly.com/v3/jobs/job-f47ac10b-58cc-4372-a567-0e02b2c3d479/status/ws',
-  [],
-  { headers: { 'Authorization': 'Bearer <token>' } }
+  '{{wsUrl}}/v3/jobs/{jobId}/status/ws?token={{accessToken}}'
 );
 ```
 

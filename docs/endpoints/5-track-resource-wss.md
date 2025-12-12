@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 5. Track Resource (WSS)
+title: Track Resource (WSS)
 parent: Endpoints
-nav_order: 5
+nav_order: 10
 ---
 
 # Track Resource Status (WSS)

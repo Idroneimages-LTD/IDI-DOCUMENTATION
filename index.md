@@ -6,7 +6,7 @@ nav_order: 1
 
 # IDI Integration API Documentation
 
-**Version:** v3 | **Updated:** 2025-11-27 | **Status:** Production
+**Version:** v3 | **Updated:** 2025-12-12 | **Status:** Production
 
 IDI-FLY-V3 Integration API for mission control, resource management, and real-time telemetry using HTTPS, MQTTS, and WSS.
 
@@ -14,27 +14,83 @@ IDI-FLY-V3 Integration API for mission control, resource management, and real-ti
 
 | Environment | REST | MQTTS | WSS |
 |:------------|:-----|:------|:----|
-| Production | `https://api.idi-fly.com/v3` | `mqtts://mqtt.idi-fly.com:8883` | `wss://ws.idi-fly.com/v3` |
-| Staging | `https://api-staging.idi-fly.com/v3` | `mqtts://mqtt-staging.idi-fly.com:8883` | `wss://ws-staging.idi-fly.com/v3` |
+| Your Environment | `{{baseUrl}}` | `{{mqttBroker}}` | `{{wsUrl}}` |
+
+> **Note:** Environment-specific URLs will be provided during partner onboarding.
 
 ## Authentication
 
-**REST:** `Authorization: Bearer <token>`
+This API uses **OAuth 2.0 M2M** (`client_credentials` grant) authentication.
 
-**MQTTS:** Username: `<client_id>` / Password: `<jwt_token>`
+### Get Access Token
 
-**WSS:** `wss://ws.idi-fly.com/v3/jobs/{jobID}/status/ws?token=<jwt_token>`
+```bash
+curl -X POST {{baseUrl}}/v3/auth/token \
+  -H "x-api-key: {{apiKey}}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "grant_type": "client_credentials",
+    "client_id": "{{clientId}}",
+    "client_secret": "{{clientSecret}}"
+  }'
+```
 
-## Endpoints Overview
+### Use Access Token
+
+| Protocol | Authentication Method |
+|:---------|:---------------------|
+| **REST** | `Authorization: Bearer {{accessToken}}` |
+| **MQTTS** | Username: `{{clientId}}` / Password: `{{accessToken}}` |
+| **WSS** | `{{wsUrl}}/v3/...?token={{accessToken}}` |
+
+> Token expires in **1 hour**. Request a new token when expired.
+
+## REST API Endpoints
+
+### Authentication
+
+| Method | Endpoint | Description |
+|:-------|:---------|:------------|
+| POST | `/v3/auth/token` | Get access token (requires x-api-key header) |
+
+### Jobs API
+
+| Method | Endpoint | Description |
+|:-------|:---------|:------------|
+| POST | `/v3/jobs/create` | Create a new job (drone mission request) |
+| GET | `/v3/jobs` | List all jobs |
+| GET | `/v3/jobs/{jobId}` | Get job details |
+| PATCH | `/v3/jobs/{jobId}` | Update a job |
+| DELETE | `/v3/jobs/{jobId}` | Delete a job |
+| POST | `/v3/jobs/{jobId}/cancel` | Cancel a pending job |
+
+### Streams API
+
+| Method | Endpoint | Description |
+|:-------|:---------|:------------|
+| POST | `/v3/streams/share` | Create a shareable stream link |
+
+### Shares API
+
+| Method | Endpoint | Description |
+|:-------|:---------|:------------|
+| GET | `/v3/shares` | List all active shares |
+| GET | `/v3/shares/{shareCode}` | Get share details |
+| DELETE | `/v3/shares/{shareCode}` | Revoke a share |
+
+### Resources API
+
+| Method | Endpoint | Description |
+|:-------|:---------|:------------|
+| GET | `/v3/resources` | Get available device groups |
+
+## Real-Time Tracking Endpoints
 
 | # | Name | Method | Path/Topic | Protocol |
 |:--|:-----|:-------|:-----------|:---------|
-| 1 | CreateJob | POST | `/v3/jobs/create` | HTTPS |
-| 2 | Track Job | SUB | `{jobID}/JOB/STATUS` | MQTTS |
-| 3 | Track Job | CONNECT | `/v3/jobs/{jobID}/status/ws` | WSS |
-| 4 | Track Resource | SUB | `{DeviceGroupID}/DEVICE/STATUS` | MQTTS |
-| 5 | Track Resource | CONNECT | `/v3/devices/{DeviceGroupID}/status/ws` | WSS |
-| 6 | Stream Share | POST | `/v3/streams/share` | HTTPS |
-| 7 | Track Share | SUB | `{shareID}/SHARE/STATUS` | MQTTS |
-| 8 | Track Share | CONNECT | `/v3/shares/{shareID}/status/ws` | WSS |
-| 9 | Get Resources | GET | `/v3/shares/{sharecode}/resources` | HTTPS |
+| 1 | Track Job | SUB | `{jobID}/JOB/STATUS` | MQTTS |
+| 2 | Track Job | CONNECT | `/v3/jobs/{jobID}/status/ws` | WSS |
+| 3 | Track Resource | SUB | `{DeviceGroupID}/DEVICE/STATUS` | MQTTS |
+| 4 | Track Resource | CONNECT | `/v3/devices/{DeviceGroupID}/status/ws` | WSS |
+| 5 | Track Share | SUB | `{shareID}/SHARE/STATUS` | MQTTS |
+| 6 | Track Share | CONNECT | `/v3/shares/{shareID}/status/ws` | WSS |

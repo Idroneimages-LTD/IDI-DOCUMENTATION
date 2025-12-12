@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 2. Track Job (MQTTS)
+title: Track Job (MQTTS)
 parent: Endpoints
-nav_order: 2
+nav_order: 7
 ---
 
 # Track Job Status (MQTTS)

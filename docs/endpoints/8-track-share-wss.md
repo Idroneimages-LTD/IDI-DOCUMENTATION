@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 8. Track Share (WSS)
+title: Track Share (WSS)
 parent: Endpoints
-nav_order: 8
+nav_order: 12
 ---
 
 # Track Share Status (WSS)
