@@ -61,8 +61,20 @@ flowchart TB
 
 ## Base URLs
 
-| Environment | REST Base URL | MQTTS Broker | WSS Base URL |
-|:------------|:--------------|:-------------|:-------------|
-| Your Environment | `{{baseUrl}}` | `{{mqttBroker}}` | `{{wsUrl}}` |
+| Type | Production URL |
+|:-----|:---------------|
+| **REST API** | `https://9v3tf7g6dj.execute-api.eu-west-2.amazonaws.com/prod` |
+| **WebSocket** | `wss://qt00j5r1s7.execute-api.eu-west-2.amazonaws.com/prod` |
 
-> **Note:** Environment-specific URLs will be provided during partner onboarding.
+## WebSocket Connection Format
+
+Connect to WebSocket with token and resource ID as query parameters:
+
+```
+{{wsUrl}}/prod?token=<JWT_TOKEN>&resourceId=<RESOURCE_ID>
+```
+
+| Parameter | Description |
+|:----------|:------------|
+| `token` | Your JWT access token |
+| `resourceId` | The device or job ID to subscribe to |

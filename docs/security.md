@@ -92,6 +92,19 @@ Password: {{accessToken}}
 {{wsUrl}}/v3/jobs/{jobID}/status/ws?token={{accessToken}}
 ```
 
+## WebSocket Connection Format
+
+Connect to WebSocket with token and resource ID as query parameters:
+
+```
+{{wsUrl}}/prod?token=<JWT_TOKEN>&resourceId=<RESOURCE_ID>
+```
+
+| Parameter | Description |
+|:----------|:------------|
+| `token` | Your JWT access token |
+| `resourceId` | The device or job ID to subscribe to |
+
 ## Idempotency
 
 | Requirement | Description |

@@ -12,11 +12,25 @@ IDI-FLY-V3 Integration API for mission control, resource management, and real-ti
 
 ## Quick Start
 
-| Environment | REST | MQTTS | WSS |
-|:------------|:-----|:------|:----|
-| Your Environment | `{{baseUrl}}` | `{{mqttBroker}}` | `{{wsUrl}}` |
+### Production URLs
 
-> **Note:** Environment-specific URLs will be provided during partner onboarding.
+| Type | URL |
+|:-----|:----|
+| **REST API** | `https://9v3tf7g6dj.execute-api.eu-west-2.amazonaws.com/prod` |
+| **WebSocket** | `wss://qt00j5r1s7.execute-api.eu-west-2.amazonaws.com/prod` |
+
+### WebSocket Connection
+
+Connect to WebSocket with token and resource ID as query parameters:
+
+```
+{{wsUrl}}/prod?token=<JWT_TOKEN>&resourceId=<RESOURCE_ID>
+```
+
+| Parameter | Description |
+|:----------|:------------|
+| `token` | Your JWT access token |
+| `resourceId` | The device or job ID to subscribe to |
 
 ## Authentication
 
