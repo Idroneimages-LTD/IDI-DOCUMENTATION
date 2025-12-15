@@ -74,6 +74,26 @@ nav_order: 7
 }
 ```
 
+## Sensor Payload Object
+
+```json
+{
+  "camera": {
+    "orientation": {
+      "pitch": -45.0,
+      "yaw": 180.0,
+      "roll": 0.0
+    }
+  }
+}
+```
+
+| Field | Type | Unit | Description |
+|:------|:-----|:-----|:------------|
+| `camera.orientation.pitch` | Float | degrees | Camera gimbal pitch angle |
+| `camera.orientation.yaw` | Float | degrees | Camera gimbal yaw angle |
+| `camera.orientation.roll` | Float | degrees | Camera gimbal roll angle |
+
 ## Weather Object
 
 ```json

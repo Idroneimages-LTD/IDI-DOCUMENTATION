@@ -26,12 +26,25 @@ Continuous telemetry stream from a device group via MQTT.
   "navigation": {
     "position": {
       "type": "Point",
-      "coordinates": [-122.4194, 37.7749, 0]
+      "coordinates": [-122.4194, 37.7749, 85.5]
     },
     "orientation": {
-      "heading": 0,
-      "pitch": 0,
-      "roll": 0
+      "heading": 270.5,
+      "pitch": -2.1,
+      "roll": 0.3
+    },
+    "velocity": {
+      "groundSpeed": 12.5,
+      "verticalSpeed": -0.5
+    }
+  },
+  "sensorPayload": {
+    "camera": {
+      "orientation": {
+        "pitch": -45.0,
+        "yaw": 180.0,
+        "roll": 0.0
+      }
     }
   },
   "weather": {
@@ -41,6 +54,6 @@ Continuous telemetry stream from a device group via MQTT.
     "humidity": 65,
     "rain": false
   },
-  "timestamp": "2025-11-27T10:30:15.123Z"
+  "timestamp": "2025-12-12T10:30:15.123Z"
 }
 ```

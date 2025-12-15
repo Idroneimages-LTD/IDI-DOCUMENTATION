@@ -45,6 +45,15 @@ Topic: job-f47ac10b-58cc-4372-a567-0e02b2c3d479/JOB/STATUS
       "verticalSpeed": -0.5
     }
   },
-  "timestamp": "2025-11-27T10:30:15.123Z"
+  "sensorPayload": {
+    "camera": {
+      "orientation": {
+        "pitch": -45.0,
+        "yaw": 180.0,
+        "roll": 0.0
+      }
+    }
+  },
+  "timestamp": "2025-12-12T10:30:15.123Z"
 }
 ```
